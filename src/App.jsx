@@ -1,5 +1,6 @@
 import "./App.css";
 import ContactList from "./components/ContactList.jsx";
+import SearchBox from "./components/SearchBox.jsx";
 import { useState } from "react";
 
 const ContactDatabase = [
@@ -10,19 +11,23 @@ const ContactDatabase = [
 ];
 
 function App() {
-  const [contactsDB, setContacts] = useState(ContactDatabase);
+  const [search, setSearch] = useState("");
+  const [contacts, setContacts] = useState(ContactDatabase);
 
-  const handleDelete = (id) => {
-    setContacts(contactsDB.filter((contact) => contact.id !== id));
+  const filteredContacts = contacts.filter((contact) =>
+    contact.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const handleDelete = (contactId) => {
+    setContacts(contacts.filter((contact) => contact.id !== contactId));
   };
 
   return (
-    <>
-      <div className="container">
-        <h1>Phonebook</h1>
-        <ContactList contacts={contactsDB} onDelete={handleDelete} />
-      </div>
-    </>
+    <div className="container">
+      <h1 className="phonebook-title">Phonebook</h1>
+      <SearchBox search={search} onSearchChange={setSearch} />
+      <ContactList contacts={filteredContacts} onDelete={handleDelete} />
+    </div>
   );
 }
 

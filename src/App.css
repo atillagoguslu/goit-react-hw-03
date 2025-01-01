@@ -1,8 +1,8 @@
 #root {
   width: 1024px;
   max-width: 1280px;
+  min-width: 1024px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -10,5 +10,11 @@
   width: 1024px;
   min-width: 1024px;
   height: 480px;
-  background-color: #c94848;
+  background-color: #cc5353;
+}
+
+.phonebook-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }

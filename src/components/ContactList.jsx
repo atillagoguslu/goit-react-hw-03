@@ -17,7 +17,11 @@ function LogToConsole(contact) {
 
 function ContactList({ contacts, onDelete }) {
   if (contacts.length === 0) {
-    return <div className={styles.contactListNotFound}><p>No contacts found</p></div>;
+    return (
+      <div className={styles.contactListNotFound}>
+        <p>No contacts found</p>
+      </div>
+    );
   } else {
     return (
       <div className={styles.contactList}>
