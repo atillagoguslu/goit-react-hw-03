@@ -44,8 +44,9 @@ function App() {
   };
 
   const handleAddContact = (contact) => {
-    setContacts([...contacts, contact]);
-    localStorage.setItem("contacts", JSON.stringify(contacts));
+    const updatedContacts = [...contacts, contact];
+    setContacts(updatedContacts);
+    localStorage.setItem("contacts", JSON.stringify(updatedContacts));
   };
 
   return (
