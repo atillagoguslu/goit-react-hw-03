@@ -1,20 +1,37 @@
 #root {
-  width: 1024px;
-  max-width: 1280px;
-  min-width: 1024px;
+  width: 100%;
+  /* max-width: 1280px; */
   margin: 0 auto;
   text-align: center;
 }
 
 .container {
-  width: 1024px;
-  min-width: 1024px;
-  height: 480px;
-  background-color: #cc5353;
+  width: 95vh;
+  max-width: 1550px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .phonebook-title {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 1px;
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

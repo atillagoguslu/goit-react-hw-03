@@ -27,6 +27,7 @@ function ContactList({ contacts, onDelete }) {
       <div className={styles.contactList}>
         {contacts.map((contact) => (
           <Contact
+            className={styles.contactItem}
             key={contact.id}
             name={contact.name}
             number={contact.number}
